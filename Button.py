@@ -8,6 +8,7 @@ class Button:
         self.button = pygame.Surface((width,height),pygame.SRCALPHA)
         self.button.blit(self.image, (0, 0))
         self.button_rect = self.button.get_rect(center=(x,y))
+
         self.font = pygame.font.Font(join("dist/Assets", "Font_style.ttf"), size)
         self.text = self.font.render(content,True,pygame.Color('black'))
         self.text_rect = self.text.get_rect(center=(width/2,height/2))

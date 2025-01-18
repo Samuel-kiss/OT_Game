@@ -6,15 +6,19 @@ class Platform:
         self.platform_image = pygame.transform.scale(pygame.image.load(join("dist/Assets", "Platforms", "cloud.png")), (self.platform_width , 20)).convert_alpha()
         self.new_platform_img = pygame.transform.scale(pygame.image.load(join("dist/Assets", "Platforms", "cloud_vytvorenie.png")), (self.platform_width , 20)).convert_alpha()
         self.rect = self.platform_image.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
-        self.Platforms = [self.rect]
         self.new_platform_rect = None
+
+        self.Platforms = [self.rect]
         self.change_time = 2000
         self.show_time = 500
         self.last_change = pygame.time.get_ticks()
+        self.width_change = self.last_change
+        self.speed_change = self.last_change
         self.score = 0
 
     def Add_platform(self,player):
         time = pygame.time.get_ticks()
+
         if self.new_platform_rect is None and time - self.last_change>self.change_time-self.show_time:
             last_platform = self.Platforms[-1]
             new_x = random.randint(max(50,last_platform.x-100),min(WINDOW_WIDTH - 100, last_platform.x + 100))
@@ -29,13 +33,17 @@ class Platform:
                 self.Platforms.pop(0)
                 if player.rect.y < WINDOW_HEIGHT and player.bonus_life_quantity >= 0:
                     self.score += 10
+                self.last_change = time
 
-
-            self.last_change = time
-            self.change_time = max(500, self.change_time - 50)
+        if (time-self.width_change)//1000 == 10:
             self.platform_width = max(50, self.platform_width - 5)
             self.platform_image = pygame.transform.scale(self.platform_image, (self.platform_width, 20)).convert_alpha()
             self.new_platform_img = pygame.transform.scale(self.new_platform_img, (self.platform_width, 20)).convert_alpha()
+            self.width_change = time
+
+        if (time-self.speed_change)//1000 == 15:
+            self.change_time = max(500, self.change_time - 50)
+            self.speed_change = time
 
     def Animation(self,screen):
             for platform in self.Platforms:

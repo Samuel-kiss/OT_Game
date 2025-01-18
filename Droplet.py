@@ -3,8 +3,9 @@ from Settings import *
 
 class Droplet:
     def __init__(self):
-        self.Droplets = []
         self.image = pygame.transform.scale(pygame.image.load(join("dist/Assets", "Kvapka.png")).convert_alpha(), (15, 20))
+
+        self.Droplets = []
         self.create_time = 3000
         self.last_creation_time = pygame.time.get_ticks()
         self.speed = 3
@@ -29,9 +30,11 @@ class Droplet:
                 self.effect.play()
                 player.bonus_life_quantity -= 1
                 self.Droplets.remove(droplet)
+
     def Animation(self,screen):
         for droplet in self.Droplets:
             screen.blit(self.image, droplet)
+
     def Update(self,screen,player):
         self.Create()
         self.Collision_and_Move(player)

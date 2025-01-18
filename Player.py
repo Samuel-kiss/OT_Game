@@ -4,13 +4,20 @@ from Settings import *
 
 class Player:
     def __init__(self):
+        self.moving = False
+        self.jumping = False
+        self.on_platform = False
+        self.double_jump = False
+
         self.walk_images = {"right": [], "left": []}
         self.jump_images = {"right": [], "left": [],"double":[]}
         self.Load_walk_images()
         self.Load_jump_images()
+
         self.direction = "right"
         self.image = pygame.image.load("dist/Assets/Owlet.png").convert_alpha()
         self.rect = self.image.get_rect(midbottom=(WINDOW_WIDTH/2,WINDOW_HEIGHT/2))
+
         self.image_index = 0
         self.double_jump_index = 0
         self.speed = 5
@@ -19,10 +26,7 @@ class Player:
         self.bonus_life_quantity = 0
         self.g_force = 0.5
         self.jump = -10
-        self.moving = False
-        self.jumping = False
-        self.on_platform = False
-        self.double_jump = False
+
         #Načítanie zvukov
         self.jump_sound = pygame.mixer.Sound(join("dist/Assets", "Music", "jump.mp3"))
         self.jump_sound.set_volume(0.9)
@@ -61,6 +65,7 @@ class Player:
     def Gravitation(self,platforms):
         self.fall += self.g_force
         self.rect.y += self.fall
+
         if self.rect.y > WINDOW_HEIGHT:
             self.hurt_sound.play()
             if self.bonus_life_quantity > 0:
@@ -68,25 +73,30 @@ class Player:
                 self.rect.y = platform.y-20
                 self.rect.x = platform.x+(platform.width/2)
                 self.fall = 0
+
             self.bonus_life_quantity -= 1
 
 
 
     def Move(self):
         keys = pygame.key.get_pressed()
+
         self.moving = False
         self.jumping = False
         self.double_jump = False
+
         if keys[pygame.K_LEFT]:
             if not self.rect.x< 0:
                 self.rect.x -= self.speed
                 self.direction = "left"
                 self.moving = True
+
         if keys[pygame.K_RIGHT]:
             if not self.rect.x+self.rect.width-6 > WINDOW_WIDTH:
                 self.rect.x += self.speed
                 self.direction = "right"
                 self.moving = True
+
         if keys[pygame.K_SPACE]:
             if self.on_platform:
                 self.jumping = True
@@ -101,6 +111,7 @@ class Player:
                     self.double_jump_quantity -= 1
             else:
                 self.rect.y = 0
+
         if self.moving and self.on_platform:
             self.walk_sound.play()
         else:

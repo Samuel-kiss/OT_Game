@@ -7,10 +7,12 @@ class  Bonuses():
         self.create_time = 3000
         self.speed = 3
         self.last_creation_time = pygame.time.get_ticks()
+
         #Načítanie obrázkov
         self.double_jump_img = pygame.transform.scale(pygame.image.load(join("dist/Assets", "Bonus", "double_jump.png")), (20, 20))
         self.extra_life_img =  pygame.transform.scale(pygame.image.load(join("dist/Assets", "Bonus", "extra_health.png")), (20, 20))
         self.rect = self.double_jump_img.get_rect()
+
         #Zvukový efekt zobratia
         self.effect = pygame.mixer.Sound(join("dist/Assets", "Music", "pickup.mp3"))
         self.effect.set_volume(0.2)
@@ -38,6 +40,7 @@ class  Bonuses():
                 elif bonus["type"] == "extra_life":
                     player.bonus_life_quantity += 1  # Pridanie extra života
                 self.Bonuses.remove(bonus)
+
     def Animation(self, screen):
         for bonus in self.Bonuses:
             if bonus["type"] == "double_jump":
@@ -45,6 +48,7 @@ class  Bonuses():
             else:
                 bonus_image = self.extra_life_img
             screen.blit(bonus_image, (bonus["rect"].x, bonus["rect"].y))
+
     def Update(self, screen,player):
         self.Create(player)
         self.Move(player)
