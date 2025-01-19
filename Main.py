@@ -20,14 +20,14 @@ class Game:
         self.seconds = None
         self.time = None
 
-        self.font = pygame.font.Font(join("dist", "Assets", "Font_style.ttf"), 24)
+        self.font = pygame.font.Font(join("dist/Assets", "Font_style.ttf"), 24)
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         pygame.display.set_caption("OT Game")
 
         self.clock = pygame.time.Clock()
         self.tick = pygame.time.get_ticks()
 
-        self.background = pygame.image.load("dist/Assets/background.png").convert_alpha()
+        self.background = pygame.image.load(join("dist/Assets", "background.png")).convert_alpha()
         self.background = pygame.transform.scale(self.background, (WINDOW_WIDTH, WINDOW_HEIGHT))
         self.screen.blit(self.background, (0, 0))
 
@@ -39,7 +39,7 @@ class Game:
         self.Droplet = Droplet()
 
         #Pesnička na pozadí hry
-        self.background_music = pygame.mixer.Sound("dist/Assets/Music/Background_music.mp3")
+        self.background_music = pygame.mixer.Sound(join("dist/Assets", "Music", "Background_music.mp3"))
         self.background_music.set_volume(0.1)
 
 
@@ -82,7 +82,7 @@ class Game:
         Score_button = Button(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2, 200, 50, "Score", 32)
         self.screen.blit(self.background, (0, 0))
         self.music.play(loops=-1)
-        font = pygame.font.Font(join("dist", "Assets", "Font_style.ttf"), 50)
+        font = pygame.font.Font(join("dist/Assets", "Font_style.ttf"), 50)
         text_score = font.render(f"Your Score: {score}", True, pygame.Color('black'))
         text_rect = text_score.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 150))
         self.screen.blit(text_score, text_rect)
