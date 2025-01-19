@@ -3,10 +3,10 @@ Na danom repozitáre sa nachádza implementácia prototypu hry v Pygame, na skú
 
 **Autor**: Samuel Kiss
 
-**Vybraná téma**: One level but constantly changing 
+**Vybraná téma**: One level, but constantly changing 
 ---
 ## **1. Úvod**
-Navrhnutá hra slúži ako ukážka pre predmet Objektové technológie, s cieľom vytvorenia funkčného prototypu hry ako projektu ku skúške. Vytvorená hra spĺňa požiadavky zadanej témy (One level but constantly changing ).
+Navrhnutá hra slúži ako ukážka pre predmet Objektové technológie, s cieľom vytvorenia funkčného prototypu hry ako projektu ku skúške. Vytvorená hra spĺňa požiadavky zadanej témy (One level, but constantly changing  ).
 Cieľom hry je udržať sa na platformách čo najdlhšie.
 
 ---
@@ -35,8 +35,8 @@ Cieľom hry je, aby hráč prežil ***určitý časový interval v hre***, prič
 ### **2.1 Prehľad hry**
 Hráč ovláda svoju postavu a snaží sa prežiť čo najdlhší čas na platformách, ktoré sa postupom času zužujú a ich generovanie sa zrýchľuje.Hráč môže zbierať bonusy, ktoré mu pomôžu prežiť dlhší čas.Hráč musí dávať pozor na padajúce kvapky, ktoré pri dotyku uberajú život.
 
-### **2.2 Interpretácia témy (One level but constantly changing)**
-**"One level but constantly changing"** -  hráč sa nachádza v jedinom hernom prostredí (alebo úrovni), ale toto prostredie sa dynamicky transformuje, mení svoje pravidlá, vzhľad, mechaniky alebo interakcie. Hlavným princípom je udržiavať hráča v napätí a výzve tým, že prostredie nie je nikdy úplne statické.
+### **2.2 Interpretácia témy (One level, but constantly changing )**
+**"One level, but constantly changing"** -  hráč sa nachádza v jedinom hernom prostredí (alebo úrovni), ale toto prostredie sa dynamicky transformuje, mení svoje pravidlá, vzhľad, mechaniky alebo interakcie. Hlavným princípom je udržiavať hráča v napätí a výzve tým, že prostredie nie je nikdy úplne statické.
 
 ### **2.3 Základné mechaniky**
 - **Prekážky**: v hre sa generujú kvapky, ktoré padajú a pri zásahu hrača odoberú jeden život.
@@ -51,7 +51,7 @@ Hráč ovláda svoju postavu a snaží sa prežiť čo najdlhší čas na platfo
 ---
 ## **3. Grafika**
 
-### **3.1 Interpretácia témy (One level but constantly changing)**
+### **3.1 Interpretácia témy (One level, but constantly changing )**
 Hra chce byť vizuálne príťažlivá, kde pomocou assetov z itch.io boli vybrané assety hráča, bonusov, prekážky a platformy. Zameranie je na 2D kreslené objekty, ktoré budú mať minimalistické animácie pohybu.
 
 
