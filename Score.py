@@ -1,4 +1,4 @@
-import pygame
+
 from Button import Button
 from Settings import *
 
@@ -55,11 +55,12 @@ class Score:
                 pygame.display.update()
 
             if self.clicked:
-                from Main import End_Screen
-                end_screen = End_Screen(score)
-                end_screen.Run()
+                from Main import Game
+                back = Game()
+                back.End_screen(self.score)
 
             pygame.quit()
+            sys.exit()
 
         except FileNotFoundError:
             print("Chyba pri čítaní súboru")
