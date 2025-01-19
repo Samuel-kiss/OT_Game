@@ -23,7 +23,7 @@ class Player:
         self.extra_jump_index = 0
         self.speed = 5
         self.fall = 0
-        self.extra_jump_quantity = 20
+        self.extra_jump_quantity = 0
         self.bonus_life_quantity = 0
         self.g_force = 0.5
         self.jump = -10
