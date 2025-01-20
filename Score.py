@@ -54,6 +54,12 @@ class Score:
         Clear_button = Button(WINDOW_WIDTH-75, 25, 150, 50, "Clear", 32)
         running = True
         while running:
+
+            self.screen.blit(Previous_button.button, Previous_button.button_rect)
+            self.screen.blit(Next_button.button, Next_button.button_rect)
+            self.screen.blit(Clear_button.button, Clear_button.button_rect)
+            self.screen.blit(Back_button.button, Back_button.button_rect)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running =  False
@@ -83,14 +89,10 @@ class Score:
 
 
                     if Back_button.Detection(mouse_pos, mouse_click):
+                        running = False
                         from Main import Game
                         back = Game()
                         back.End_screen(self.score)
-
-            self.screen.blit(Previous_button.button, Previous_button.button_rect)
-            self.screen.blit(Next_button.button, Next_button.button_rect)
-            self.screen.blit(Clear_button.button, Clear_button.button_rect)
-            self.screen.blit(Back_button.button, Back_button.button_rect)
 
             pygame.display.update()
 
