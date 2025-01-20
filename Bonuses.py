@@ -36,9 +36,9 @@ class  Bonuses():
             elif bonus["rect"].colliderect(player.rect):
                 self.effect.play()
                 if bonus["type"] == "extra_jump":
-                    player.extra_jump_quantity += 1  # Pridanie dvojskoku
+                    player.extra_jump_quantity += 1
                 elif bonus["type"] == "extra_life":
-                    player.bonus_life_quantity += 1  # Pridanie extra života
+                    player.bonus_life_quantity += 1
                 self.Bonuses.remove(bonus)
 
     def Animation(self, screen):

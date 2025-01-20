@@ -9,6 +9,7 @@ class Droplet:
         self.create_time = 3000
         self.last_creation_time = pygame.time.get_ticks()
         self.speed = 3
+
         # Zvukový efekt trafenia
         self.effect = pygame.mixer.Sound(join("dist/Assets", "Music", "hurt.mp3"))
         self.effect.set_volume(0.2)

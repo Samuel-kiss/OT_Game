@@ -3,7 +3,6 @@ from Settings import *
 
 class Button:
     def __init__(self,x,y,width,height,content,size):
-        #Tlačito Start
         self.image = pygame.transform.scale(pygame.image.load(join("dist/Assets", "button.png")), (width, height)).convert_alpha()
         self.button = pygame.Surface((width,height),pygame.SRCALPHA)
         self.button.blit(self.image, (0, 0))
