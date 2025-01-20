@@ -102,8 +102,8 @@ class Game:
             if Score_button.Detection(mouse_position, mouse_click):
                 end = False
                 self.music.stop()
-                tabulka = Score(score)
-                tabulka.Animate(self.file)
+                tabulka = Score(score,self.file)
+                tabulka.Run()
 
             if Again_button.Detection(mouse_position, mouse_click):
                 end = False
