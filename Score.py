@@ -42,7 +42,7 @@ class Score:
             score,time = line.split(" ", 1)
             score.replace(" ","").strip()
             time.replace(" ","").strip()
-            text = self.font.render(f"{number:>3}.  {score:>4}   {time:>5}", True, pygame.Color("black"))
+            text = self.font.render(f"{number:>3}.{score:^10}{time:^7}", True, pygame.Color("black"))
             text_rect = text.get_rect(center = (WINDOW_WIDTH / 2 - 20, set_y))
             self.screen.blit(text, text_rect)
             set_y += text_rect.height
@@ -54,6 +54,7 @@ class Score:
         Clear_button = Button(WINDOW_WIDTH-75, 25, 150, 50, "Clear", 32)
         running = True
         while running:
+
 
             self.screen.blit(Previous_button.button, Previous_button.button_rect)
             self.screen.blit(Next_button.button, Next_button.button_rect)
