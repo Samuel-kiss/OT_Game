@@ -36,7 +36,6 @@ class Score:
         self.screen.blit(self.text, self.text_rect)
         set_y = 100
         end = min(self.start + self.lines_per_page, self.total_lines)
-        print(f"{self.total_lines}")
         for number,line in enumerate(self.lines[self.start:end], start=self.start):
             line = line.replace("\t", " ").strip()
             score,time = line.split(" ", 1)
