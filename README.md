@@ -54,6 +54,11 @@ Hráč ovláda svoju postavu a snaží sa prežiť čo najdlhší čas na platfo
 ### **3.1 Interpretácia témy (One level, but constantly changing )**
 Hra chce byť vizuálne príťažlivá, kde pomocou assetov z itch.io boli vybrané assety hráča, bonusov, prekážky a platformy. Zameranie je na 2D kreslené objekty, ktoré budú mať minimalistické animácie pohybu.
 
+<p align="center">
+  <img src="https://github.com/Samuel-kiss/OT_Game/blob/main/ukazka.png" alt="Ukatka assetov">
+  <br>
+  <em>Ukážka Assetov z hry</em>
+</p>
 
 ### **3.2 Dizajn**
 V hre boli použité assety z itch.io.Cieľom bolo dosiahnuť na pohľad príjemný animovaný dizajn v kontexte arkádovej skákačky.
